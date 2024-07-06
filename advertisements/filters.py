@@ -7,9 +7,7 @@ from advertisements.models import Advertisement
 class AdvertisementFilter(filters.FilterSet):
     """Фильтры для объявлений."""
 
-    class F(FilterSet):
-        date = DateFromToRangeFilter()
-
+    created_at = DateFromToRangeFilter()
     class Meta:
         model = Advertisement
-        fields = ['created_at']
+        fields = ['created_at', 'status', 'creator']
